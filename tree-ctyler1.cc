@@ -5,24 +5,24 @@
 #include "tree-pass.h"
 #include "context.h"
 #include "function.h"
-#include "basic-block.h"  // For basic_block and related macros
-#include "cfg.h"          // For control_flow_graph
-#include "gimple.h"       // For GIMPLE statements
-#include "gimple-iterator.h" // For GIMPLE statement iteration
-#include "gimple-pretty-print.h" // For printing GIMPLE statements
+#include "basic-block.h" 
+#include "cfg.h"        
+#include "gimple.h"      
+#include "gimple-iterator.h" 
+#include "gimple-pretty-print.h"
 
 namespace {
-    // Pass metadata
+    
     const pass_data pass_data_ctyler = {
-        GIMPLE_PASS,       // Type
-        "ctyler",          // Name
-        OPTGROUP_NONE,     // Option group
-        TV_NONE,           // TV identifier
-        PROP_cfg,          // Properties required
-        0,                 // Properties provided
-        0,                 // Properties destroyed
-        0,                 // To-do flags start
-        0                  // To-do flags finish
+        GIMPLE_PASS,       
+        "ctyler",          
+        OPTGROUP_NONE,     
+        TV_NONE,          
+        PROP_cfg,         
+        0,              
+        0,                 
+        0,                
+        0                 
     };
 
     class pass_ctyler : public gimple_opt_pass {
@@ -64,3 +64,4 @@ namespace {
 gimple_opt_pass *make_pass_ctyler(gcc::context *ctxt) {
     return new pass_ctyler(ctxt);
 }
+
